@@ -1,8 +1,5 @@
 import { Theme } from "./layouts/theme";
-import {
-  HashRouter,
-  Route,
-} from "react-router";
+import { HashRouter, Route, Routes } from "react-router";
 import { LoginPage } from "./screens/login";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
@@ -28,18 +25,20 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Theme>
         <HashRouter basename="/">
-          <Route path="/" element={<PublicationsPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Toaster
-            toastOptions={{
-              style: {
-                borderRadius: "10px",
-                background: "#333",
-                color: "#fff",
-              },
-            }}
-            position="top-center"
-          />
+          <Routes>
+            <Route path="/" element={<PublicationsPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Toaster
+              toastOptions={{
+                style: {
+                  borderRadius: "10px",
+                  background: "#333",
+                  color: "#fff",
+                },
+              }}
+              position="top-center"
+            />
+          </Routes>
         </HashRouter>
       </Theme>
     </QueryClientProvider>
