@@ -1,28 +1,25 @@
 import { Theme } from "./layouts/theme";
 import {
-  createBrowserRouter,
-  RouterProvider,
   HashRouter,
   Route,
 } from "react-router";
 import { LoginPage } from "./screens/login";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-// import { HashRouter, Route } from "react-router-dom"; // Note 1
 import { PublicationsPage } from "./screens/publications";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: () => {
-      return <PublicationsPage />;
-    },
-  },
-  {
-    path: "/login",
-    Component: LoginPage,
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     Component: () => {
+//       return <PublicationsPage />;
+//     },
+//   },
+//   {
+//     path: "/login",
+//     Component: LoginPage,
+//   },
+// ]);
 
 const queryClient = new QueryClient();
 
