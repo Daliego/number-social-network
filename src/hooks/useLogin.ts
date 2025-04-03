@@ -8,7 +8,6 @@ import { useNavigate } from "react-router";
 
 function useLogin() {
   const queryClient = useQueryClient();
-  const url = typeof window !== "undefined" ? window.location.origin : "";
   const navigate = useNavigate();
 
   return useMutation({

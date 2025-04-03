@@ -1,6 +1,5 @@
 import { useFormik } from "formik";
 import { Input } from "../@shared/Input";
-import useCreatePublication from "../../hooks/publications/useCreatePublication";
 import useCreateComments from "../../hooks/comments/useCreateComments";
 import { Operations } from "../../models/Comments";
 
@@ -14,7 +13,6 @@ interface OperandsProps {
 export function Operands({
   publicationId,
   userId,
-  replyType,
   predecessorId,
 }: OperandsProps) {
   const { mutateAsync: createComment } = useCreateComments();

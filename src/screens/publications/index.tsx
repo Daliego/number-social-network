@@ -4,7 +4,6 @@ import { User } from "../../models/User";
 import { useGetPublications } from "../../hooks/publications/useGetPublications";
 import { RotatingLines } from "react-loader-spinner";
 import { Comment } from "../../components/publications/Comments";
-import { useEffect } from "react";
 
 export function PublicationsPage() {
   const user = secureLocalStorage.getItem("user") as User | null;

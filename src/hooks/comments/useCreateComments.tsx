@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { AxiosError } from "axios";
 import { COMMENT } from "../../services/apiService/endpoints/comment";
-import { Comment, IComment } from "../../models/Comments";
+import { IComment } from "../../models/Comments";
 
 function useCreateComments() {
   const queryClient = useQueryClient();
