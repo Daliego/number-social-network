@@ -1,9 +1,14 @@
 import { Theme } from "./layouts/theme";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  HashRouter,
+  Route,
+} from "react-router";
 import { LoginPage } from "./screens/login";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-import { HashRouter } from "react-router-dom"; // Note 1
+// import { HashRouter, Route } from "react-router-dom"; // Note 1
 import { PublicationsPage } from "./screens/publications";
 
 const router = createBrowserRouter([
@@ -25,8 +30,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Theme>
-        <HashRouter>
-          <RouterProvider router={router} />
+        <HashRouter basename="/">
+          <Route path="/" element={<PublicationsPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Toaster
             toastOptions={{
               style: {
